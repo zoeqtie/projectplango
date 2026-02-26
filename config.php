@@ -1,12 +1,15 @@
 <?php
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db   = "plango_db";
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-$conn = new mysqli($host, $user, $pass, $db);
+$host = "sql209.infinityfree.com";
+$user = "if0_41252224";
+$pass = "00sweetpie";  // ใส่รหัสจริง
+$db   = "if0_41252224_plango";
 
-if ($conn->connect_error) {
-    die("เชื่อมต่อฐานข้อมูลล้มเหลว: " . $conn->connect_error);
+$conn = mysqli_connect($host, $user, $pass, $db);
+
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
 }
 ?>
